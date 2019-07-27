@@ -1,7 +1,9 @@
 onAdd = (e) => {
+    
     e.preventDefault();
     let val = (e.target[0].value);
     if(val){
+        
         const li = document.createElement("li");
         const del = document.createElement("button");
         del.innerHTML="delete";
@@ -15,12 +17,12 @@ onAdd = (e) => {
         console.log(e);
     
     const todo = ul.appendChild(li).appendChild(div).innerHTML=val;
-    li.appendChild(btn);
-    li.appendChild(del);
+        li.appendChild(btn);
+        li.appendChild(del);
     del.addEventListener("click" , ()=>{
         li.remove();
     })
-    document.querySelector("input").value="";
+    localStorage.setItem("key1" , val);
     
     }
 
